@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1621038259 source:c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\categoria.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"categoria.h"
+
+1621038276 c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\categoria.h
+
+1621032391 source:c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1621032511 c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\inputs.h
+
+1621040263 source:c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\juego.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juego.h"
+
+1621038797 c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\juego.h
+	"categoria.h"
+
+1621037021 source:c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+
+1621038694 c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\cliente.h
+	"inputs.h"
+
+1621040196 source:c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+	"inputs.h"
+	"fecha.h"
+	"cliente.h"
+	"juego.h"
+	"categoria.h"
+	"alquileres.h"
+	"datawarehouse.h"
+
+1621029976 c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\fecha.h
+
+1621040402 c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\alquileres.h
+	"fecha.h"
+	"juego.h"
+	"cliente.h"
+
+1621036513 source:c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\datawarehouse.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"datawarehouse.h"
+
+1621036514 c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\datawarehouse.h
+	"juego.h"
+	"categoria.h"
+
+1621040211 source:c:\users\mer-v\downloads\code blocks\verasotelo,mercedes-pp-1g\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alquileres.h"
+	"juego.h"
+
