@@ -12,7 +12,8 @@ int menuOpciones(){
     printf("4) Listar Clientes\n");
     printf("5) Alta alquiler\n");
     printf("6) Listar alquileres\n");
-    printf("7) Salir\n\n");
+    printf("7) Informes\n");
+    printf("8) Salir\n\n");
     opcion=getOption(1,7);
     return opcion;
 }
@@ -21,6 +22,21 @@ int submenuModificar(){
     int opcion;
     printf("Que dato desea modificar?\n1. Nombre\n2. Apellido\n3. Sexo\n\n");
 	opcion=getOption(1,3);
+    return opcion;
+}
+
+int submenuInformes(){
+    int opcion;
+    printf("     INFORMES\n");
+    printf("1. Mostrar juegos por categoria\n");
+    printf("2. Mostrar categoria preferida por clientes\n");
+    printf("3. Mostrar juego mas popular\n");
+    printf("4. Mostrar juego mas popular entre las mujeres\n");
+    printf("5. Mostrar categoria mas popular entre los hombres\n");
+    printf("6. Mostrar los juegos alquilados por cliente\n");
+    printf("7. Juegos alquilados por fecha\n");
+    printf("8. Volver al menu anterior\n\n");
+	opcion=getOption(1,8);
     return opcion;
 }
 

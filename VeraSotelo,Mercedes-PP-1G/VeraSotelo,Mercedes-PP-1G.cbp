@@ -31,6 +31,35 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="alquileres.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="alquileres.h" />
+		<Unit filename="categoria.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="categoria.h" />
+		<Unit filename="cliente.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cliente.h" />
+		<Unit filename="datawarehouse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="datawarehouse.h" />
+		<Unit filename="fecha.h" />
+		<Unit filename="informes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="informes.h" />
+		<Unit filename="inputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="inputs.h" />
+		<Unit filename="juego.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="juego.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

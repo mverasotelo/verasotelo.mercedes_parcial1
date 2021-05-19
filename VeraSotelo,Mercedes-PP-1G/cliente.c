@@ -87,12 +87,14 @@ int ordenarClientes(eCliente clientes[], int tam){
     eCliente aux;
     if(clientes!=NULL && tam>0){
         for(int i=0; i<tam-1;i++){
-            for(int j=1; j<tam; j++){
-                if((clienteActivo(clientes[i])&&(strcmp(clientes[i].apellido,clientes[j].apellido)>0)||
-                    (clienteActivo(clientes[i])&&(strcmp(clientes[i].apellido,clientes[j].apellido)==0)&&(strcmp(clientes[i].nombre,clientes[j].nombre)>0)))){
+            for(int j=i+1; j<tam; j++){
+                if(clienteActivo(clientes[i])){
+                    if(strcmp(clientes[i].apellido,clientes[j].apellido)>0||
+                       ((strcmp(clientes[i].apellido,clientes[j].apellido)==0)&&(strcmp(clientes[i].nombre,clientes[j].nombre)>0))){
                         aux=clientes[i];
                         clientes[i]=clientes[j];
                         clientes[j]=aux;
+                    }
                 }
             }
         }
@@ -104,9 +106,9 @@ int ordenarClientes(eCliente clientes[], int tam){
 int mostrarClientes(eCliente clientes[], int tam){
     int cantidadClientes=0;
     int flag=0;
+    ordenarClientes(clientes,tam);
     if(clientes!=NULL && tam>0){
-        ordenarClientes(clientes,tam);
-        printf("  CODIGO  |         NOMBRE       |       APELLIDO       | SEXO |  TELEFONO \n");
+        printf(" CODIGO               NOMBRE              APELLIDO       SEXO     TELEFONO \n");
         for(int i=0;i<tam;i++){
             if (clienteActivo(clientes[i])){
                 mostrarCliente(clientes[i]);
@@ -123,7 +125,7 @@ int mostrarClientes(eCliente clientes[], int tam){
 }
 
 void mostrarCliente(eCliente cliente){
-    printf("   %04d   |%20s  |%20s  |   %c  |  %s\n",
+    printf("  %04d  %20s  %20s         %c     %s\n",
         cliente.codigo,
         cliente.nombre,
         cliente.apellido,
@@ -180,25 +182,41 @@ int modificarDato(eCliente clientes[], int tam, int codigo, int datoModif){
 }
 
 int bajaCliente(eCliente clientes[], int tam){
-    int todoOk=0;
-    int codigo;
+    int codigo=-1;
     int indice;
     char confirmar;
-    printf("    BAJA DE CLIENTES\n");
-    mostrarClientes(clientes,tam);
-    printf("Codigo del cliente a dar de baja: ");
-    scanf("%d", &codigo);
-    printf("\n");
-    indice=buscarCliente(clientes,tam,codigo);
-    if(indice!=-1){
-        printf("Seguro que desea dar de baja al cliente?\n");
-        fflush (stdin);
-        scanf("%c", &confirmar);
-        if(confirmar=='s'){
-            clientes[indice].isEmpty=1;
-            todoOk=1;
+    if(clientes!=NULL && tam>0){
+        printf("    BAJA DE CLIENTES\n");
+        mostrarClientes(clientes,tam);
+        printf("Codigo del cliente a dar de baja: ");
+        scanf("%d", &codigo);
+        printf("\n");
+        indice=buscarCliente(clientes,tam,codigo);
+        if(indice!=-1){
+            printf("Seguro que desea dar de baja al cliente?\n");
+            fflush (stdin);
+            scanf("%c", &confirmar);
+            if(confirmar=='s'){
+                clientes[indice].isEmpty=1;
+            }else{
+                printf("Baja cancelada por el usuario.\n");
+            }
         }else{
-            printf("Baja cancelada por el usuario.\n");
+            printf("El codigo del cliente no existe.\n");
+        }
+    }
+    return codigo;
+}
+
+int cargarApellido(int codCliente, eCliente clientes[], int tam, char descripcion[51]){
+    int todoOk=0;
+    if(clientes!=NULL && tam>0 && descripcion!=NULL){
+        for(int i=0; i<tam;i++){
+            if(clientes[i].codigo==codCliente){
+                strcpy(descripcion,clientes[i].apellido);
+                break;
+                todoOk=1;
+            }
         }
     }
     return todoOk;

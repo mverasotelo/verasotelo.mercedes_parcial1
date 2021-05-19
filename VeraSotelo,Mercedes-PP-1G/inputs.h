@@ -18,6 +18,14 @@ int menuOpciones();
 int submenuModificar();
 
 
+/** \brief submenu de informes
+ *
+ * \return int devuelve opcion seleccionada por el usuario
+ *
+ */
+int submenuInformes();
+
+
 /** \brief pide y valida una opcion
  *
  * \param min int opcion minima

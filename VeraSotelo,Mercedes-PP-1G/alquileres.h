@@ -4,6 +4,8 @@
 #include "juego.h"
 #include "cliente.h"
 
+//estructura alquiler
+
 typedef struct {
     int codigoAlquiler;
     int codigoJuego;
@@ -13,67 +15,92 @@ typedef struct {
 
 }eAlquiler;
 
+//prototipos
 
-/** \brief Inicializa alquileres a isEmpty=1
+/** \brief Inicializa todos los elementos de alquileres a isEmpty=1
  *
  * \param alquileres[] eAlquiler lista de alquileres
- * \param tam int tamaño
- * \return int devuelve 0 si hay error 1 si esta todoOk
+ * \param tam int tamaño de la lista
+ * \return int devuelve 0 si hay error 1 si esta todo Ok
  *
  */
 int inicializarAlquileres(eAlquiler alquileres[], int tam);
 
-/** \brief busca lugar libre para alquiler
+/** \brief Busca lugar libre para alquiler
  *
  * \param alquileres[] eAlquiler lista de alquileres
- * \param tam int tamaño
- * \return int devuelve indice libre
+ * \param tam int tamaño de la lista
+ * \return int devuelve primer indice libre
  *
  */
 int buscarLugarAlq(eAlquiler alquileres[], int tam);
 
-/** \brief
+/** \brief Da de alta un nuevo alquiler
  *
- * \param alquileres[] eAlquiler
- * \param tam int
- * \param pId int*
- * \param clientes[] eCliente
- * \param tamC int
- * \param juegos[] eJuego
- * \param tamJ int
- * \param categorias[] eCategoria
- * \param tamCat int
- * \return int
+ * \param alquileres[] eAlquiler - lista de alquileres donde guardar el nuevo elemento
+ * \param tam int - tamaño de la lista de alquileres
+ * \param pId int* - proximo ID a utilizar
+ * \param clientes[] eCliente - lista de clientes
+ * \param tamC int - tamaño de la lista de clientes
+ * \param juegos[] eJuego - lista de juegos
+ * \param tamJ int - tamaño de la lista de juegos
+ * \param categorias[] eCategoria - lista de categorias
+ * \param tamCat int - tamaño de la lista de categorias
+ * \return int - devuelve 0 si hay error 1 si esta todo Ok
  *
  */
 int altaAlquiler(eAlquiler alquileres[], int tam, int *pId, eCliente clientes[], int tamC, eJuego juegos[], int tamJ, eCategoria categorias[], int tamCat);
 
-/** \brief
+/** \brief Imprime todos los alquileres de una lista, detallando nombre, juego, categoria y fecha
  *
- * \param alquileres[] eAlquiler lista de alquileres
- * \param tam int tamaño
- * \return int
+ * \param alquileres[] eAlquiler - lista de alquileres
+ * \param tam int - tamaño de la lista de alquileres
+ * \param clientes[] eCliente - lista de clientes
+ * \param tamC int - tamaño de la lista de clientes
+ * \param juegos[] eJuego - lista de juegos
+ * \param tamJ int - tamaño de la lista de juegos
+ * \param categorias[] eCategoria - lista de categorias
+ * \param tamCat int - tamaño de la lista de categorias
+
+ * \return int - devuelve 0 si hay error 1 si esta todo Ok
  *
  */
-int listarAlquileres(eAlquiler alquileres[], int tam);
+int listarAlquileres(eAlquiler alquileres[], int tam, eCliente clientes[], int tamC, eJuego juegos[], int tamJ, eCategoria categorias[], int tamCat);
 
-/** \brief muestra un alquiler
+
+/** \brief Recibe un alquiler y lo imprime, detallando nombre, juego, categoria y fecha
  *
- * \param alquiler eAlquiler
+ * \param alquiler eAlquiler alquiler a imprimir
+ * \param clientes[] eCliente - lista de clientes
+ * \param tamC int - tamaño de la lista de clientes
+ * \param juegos[] eJuego - lista de juegos
+ * \param tamJ int - tamaño de la lista de juegos
+ * \param tamJ int - tamaño de la lista de juegos
+ * \param categorias[] eCategoria - lista de categorias
  * \return void
  *
  */
-void mostrarAlquiler(eAlquiler alquiler);
+void mostrarAlquiler(eAlquiler alquiler, eCliente clientes[], int tamC, eJuego juegos[], int tamJ, eCategoria categorias[], int tamCat);
 
 /** \brief cuenta los alquileres activos
  *
  * \param alquileres[] eAlquiler lista de alquileres
- * \param tam int tamaño
+ * \param tam int tamaño lista de alquileres
 
  * \return int devuelve numero de alquileres activos
  *
  */
 int contarAlquileres(eAlquiler alquileres[],int tam);
 
+
+/** \brief Da de baja los alquileres de un cliente que se dio de baja
+ *
+ * \param alquileres[] eAlquiler lista de alquileres
+ * \param tam int tamaño lista de alquileres
+ * \param codEmpleado int codigo empleado dado de baja
+ * \return int - devuelve 0 si hay error 1 si esta todo Ok
+ *
+ */
+int bajaAlquileresCliente(eAlquiler alquileres[],int tam, int codEmpleado);
 
 #endif // ALQUILERES_H_INCLUDED
